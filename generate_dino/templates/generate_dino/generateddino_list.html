@@ -1,0 +1,15 @@
+{% extends 'generate_dino/base.html' %}
+
+{% block content %}
+    <h1 class="my-5">Made up dinosaurs:</h1>
+
+    <div class="row row-cols-3 g-2">
+        {% for dino in generated_dinos %}
+        <div class="col">
+            <div class="p-3 border">
+            <h3>{{ dino.name }}</h3>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock %}

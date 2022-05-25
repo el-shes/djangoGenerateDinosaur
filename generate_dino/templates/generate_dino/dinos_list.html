@@ -1,0 +1,25 @@
+{% extends "generate_dino/base.html" %}
+
+{% block content %}
+
+    <h1 class="my-5">These are all known dinosaurs:</h1>
+
+    <div class="flex-column">
+        <a href="{% url 'letter_list' letter='A' %}">A</a>
+        <a href="">B</a>
+        <a href="">C</a>
+{#        <a href="">P-U</a>#}
+{#        <a href="">V-Z</a>#}
+    </div>
+
+
+    <div class="row row-cols-3 g-2">
+        {% for dino in dinos %}
+        <div class="col">
+            <div class="p-3 border">
+            <h3>{{ dino.name }}</h3>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock %}

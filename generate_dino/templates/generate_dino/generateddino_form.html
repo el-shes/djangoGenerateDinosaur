@@ -1,0 +1,11 @@
+{% extends 'generate_dino/base.html' %}
+
+{%  block content %}
+
+    <form method="POST">
+        {%  csrf_token %}
+        {{ form }}
+        <button type="submit" class="btn btn-primary my-5">GENERATE</button>
+    </form>
+
+{% endblock %}
