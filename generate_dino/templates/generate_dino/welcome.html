@@ -7,7 +7,7 @@
         To check out all known dinosaurs names just click on a button  </p>
     <a href="{% url 'dino_list' %}" class="btn btn-primary">See all!</a>
     <p>Here we create our own dinos</p>
-    <a href="{% url 'generated_dino_new'  %}" class="btn btn-primary">Generate your own!</a>
+    <a href="{% url 'view_generate' dino_name='empty' %}" class="btn btn-primary">Generate your own!</a>
     <p>Learn the names of all made up dinos Here.</p>
     <a href="{% url 'generated_dino_list'  %}" class="btn btn-primary">Check it out!</a>
 

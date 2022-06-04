@@ -1,11 +1,23 @@
 {% extends 'generate_dino/base.html' %}
 
-{%  block content %}
+{% block content %}
+    {% if not dino_name %}
+        <div class="center">
+            {% csrf_token %}
+            <a href="{% url 'generated_dino_new' %}" class="btn btn-primary">GENERATE</a>
+        </div>
+    {% else %}
+        <div class="content">
+            <h4>Here is your new species of dinosaur!</h4>
+            <p>
+                {{ dino_name }}
+            </p>
+        </div>
 
-    <form method="POST">
-        {%  csrf_token %}
-        {{ form }}
-        <button type="submit" class="btn btn-primary my-5">GENERATE</button>
-    </form>
+        <div>
+            <a href="{% url 'generated_dino_save' dino_name=dino_name %}" class="btn btn-outline-primary">Add</a>
+            <a href="{% url 'generated_dino_new' %}" class="btn btn-outline-danger">Redo</a>
+        </div>
+    {% endif %}
 
 {% endblock %}

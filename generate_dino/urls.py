@@ -8,7 +8,9 @@ urlpatterns = [
     path('dinos/dino/<int:pk>', views.DinoDetailView.as_view()),
     path('dinos/dino/<str:letter>', views.DinosFilterList.as_view(), name='letter_list'),
 
-    path('generated/dinos/new', views.DinoCreate.as_view(), name='generated_dino_new'),
-    path('generated/dinos/', views.GeneratedDinoList.as_view(), name='generated_dino_list'),
+    path('generate/dinos/form/<str:dino_name>', views.DinoCreateView.as_view(), name='view_generate'),
+    path('generate/dinos/new', views.DinoCreate.as_view(), name='generated_dino_new'),
+    path('generate/dinos/save/<str:dino_name>', views.DinoSave.as_view(), name='generated_dino_save'),
+    path('generate/dinos/all', views.GeneratedDinoList.as_view(), name='generated_dino_list'),
 
 ]

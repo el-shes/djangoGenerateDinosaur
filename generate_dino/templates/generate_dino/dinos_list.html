@@ -5,11 +5,9 @@
     <h1 class="my-5">These are all known dinosaurs:</h1>
 
     <div class="flex-column">
-        <a href="{% url 'letter_list' letter='A' %}">A</a>
-        <a href="">B</a>
-        <a href="">C</a>
-{#        <a href="">P-U</a>#}
-{#        <a href="">V-Z</a>#}
+    {% for letter in abc %}
+        <a href="{% url 'letter_list' letter=letter %}">{{ letter }}</a>
+    {% endfor %}
     </div>
 
 
